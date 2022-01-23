@@ -12,6 +12,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 
 @Component
 public class JwtUserDetailsService implements UserDetailsService {
@@ -31,9 +33,16 @@ public class JwtUserDetailsService implements UserDetailsService {
                 new ArrayList<>());
     }
 
+    @Override
+    public Collection<UserAccount> loadAllUsers() throws UsernameNotFoundException {
+        return userAccountRepository.findAll();
+    }
+
     public UserAccount save(UserAccount saveAccount) {
         logger.info("Save into Database: " + saveAccount.getUsername() + " - " + saveAccount.getPassword());
         return userAccountRepository.save(saveAccount);
     }
+
+
 
 }

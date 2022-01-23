@@ -1,5 +1,6 @@
 package com.example.springboot.controller;
 
+import com.example.springboot.entity.database.UserAccount;
 import com.example.springboot.service.JwtUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Collection;
+import java.util.stream.Collectors;
 
 @RestController
 public class HelloWorldController {
@@ -25,7 +27,12 @@ public class HelloWorldController {
 
 	@RequestMapping({ "/user-list" })
 	public ResponseEntity<Collection<String>> userList() {
-		userDetailsService.loadAllUsers();
 
+		Collection<String> response = userDetailsService.loadAllUsers()
+				.stream()
+				.map(UserAccount::getUsername)
+				.collect(Collectors.toList());
+
+		return ResponseEntity.ok(response);
 	}
 }

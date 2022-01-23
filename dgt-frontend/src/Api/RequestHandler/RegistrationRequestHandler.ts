@@ -1,5 +1,5 @@
-import {RequestHandler} from "../RequestHandler";
-import {HttpApi} from "../HttpApi";
+import {POSTRequestHandler} from "../RequestHandler";
+import {POSTHttpApi} from "../HttpApi";
 import {PostRequest} from "../Request";
 
 export interface RegistrationRequest {
@@ -15,13 +15,13 @@ export interface RegistrationResponse {
     message: string;
 }
 
-export abstract class RegistrationRequestHandler extends RequestHandler<RegistrationRequest, RegistrationResponse> {
+export abstract class RegistrationRequestHandler extends POSTRequestHandler<RegistrationRequest, RegistrationResponse> {
     static async fetch(body: RegistrationRequest): Promise<RegistrationResponse> {
         const request: PostRequest = {
             url: 'register',
             body: JSON.stringify(body)
         }
-        const promise = await HttpApi.publicPOST(request);
+        const promise = await POSTHttpApi.publicPOST(request);
         return promise.json();
     }
 }
