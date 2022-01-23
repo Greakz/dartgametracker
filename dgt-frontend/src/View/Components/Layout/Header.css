@@ -1,0 +1,9 @@
+.header-tiles {
+    background: rgb(73,79,83);
+    background: linear-gradient(10deg, rgba(73,79,83,1) 0%, rgba(105,124,131,1) 23%, rgba(171,209,217,1) 100%);
+}
+
+.footer-tiles {
+    background: rgb(73,79,83);
+    background: linear-gradient(10deg, rgba(73,79,83,1) 0%, rgba(105,124,131,1) 23%, rgba(171,209,217,1) 100%);
+}
