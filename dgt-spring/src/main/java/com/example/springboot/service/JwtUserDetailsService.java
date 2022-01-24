@@ -33,7 +33,6 @@ public class JwtUserDetailsService implements UserDetailsService {
                 new ArrayList<>());
     }
 
-    @Override
     public Collection<UserAccount> loadAllUsers() throws UsernameNotFoundException {
         return userAccountRepository.findAll();
     }
@@ -42,7 +41,4 @@ public class JwtUserDetailsService implements UserDetailsService {
         logger.info("Save into Database: " + saveAccount.getUsername() + " - " + saveAccount.getPassword());
         return userAccountRepository.save(saveAccount);
     }
-
-
-
 }

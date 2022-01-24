@@ -1,7 +1,9 @@
 package com.example.springboot.controller.authentication;
 
 import com.example.springboot.config.JwtTokenUtil;
+import com.example.springboot.controller.game.GameCreationRequest;
 import com.example.springboot.entity.database.UserAccount;
+import com.example.springboot.service.GameService;
 import com.example.springboot.service.JwtUserDetailsService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -33,11 +35,9 @@ public class JwtAuthenticationController {
     @Autowired
     private PasswordEncoder bcryptEncoder;
 
-    @RequestMapping(value = "/authenticate", method = RequestMethod.POST)
+    @RequestMapping(value = "/authenticate", method = RequestMethod.POST, produces = "application/json; charset=utf-8")
     public ResponseEntity<JwtAuthenticationResponse> createAuthenticationToken(@RequestBody JwtAuthenticatonRequest authenticationRequest) throws Exception {
-
         authenticate(authenticationRequest.getUsername(), authenticationRequest.getPassword());
-
         final UserDetails userDetails = userDetailsService
                 .loadUserByUsername(authenticationRequest.getUsername());
 
@@ -51,14 +51,15 @@ public class JwtAuthenticationController {
         UserAccount newUser = new UserAccount();
         newUser.setUsername(registrationRequest.getUsername());
         newUser.setPassword(bcryptEncoder.encode(registrationRequest.getPassword()));
+        newUser.setEmail(registrationRequest.getEmail());
 
         UserAccount registeredAccount = userDetailsService.save(newUser);
 
-        logger.info("sending back: " + registeredAccount.getUsername() + " - " + registeredAccount.getPassword());
+        logger.info("sending back: " + registeredAccount.getUsername() + " - " + registeredAccount.getPassword() + " - " + registeredAccount.getEmail());
 
         JwtRegistrationResponse response = new JwtRegistrationResponse(
                 registeredAccount.getUsername(),
-                registeredAccount.getPassword()
+                registeredAccount.getEmail()
         );
         return ResponseEntity.ok(response);
     }
