@@ -18,4 +18,13 @@ public class ThrowRequest {
     public int getResult() {
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "ThrowRequest{" +
+                "number=" + number +
+                ", throwType=" + throwType +
+                ", result=" + result +
+                '}';
+    }
 }

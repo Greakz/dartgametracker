@@ -24,6 +24,6 @@ public class GameController {
 
     @RequestMapping(value = "/game", method = RequestMethod.POST, produces = "application/json; charset=utf-8")
     public ResponseEntity<GameCreationResponse> createGame(@RequestBody GameCreationRequest request) {
-        return new ResponseEntity<GameCreationResponse>( gameService.createGame(request), HttpStatus.CREATED);
+        return new ResponseEntity<GameCreationResponse>(gameService.createGame(request), HttpStatus.CREATED);
     }
 }

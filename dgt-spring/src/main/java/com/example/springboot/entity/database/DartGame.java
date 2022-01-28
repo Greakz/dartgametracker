@@ -20,6 +20,12 @@ public class DartGame {
     @JoinTable(name="dart_game_users", joinColumns = @JoinColumn(name="game_id"), inverseJoinColumns = @JoinColumn(name = "user_id"))
     private Collection<UserAccount> user;
 
+    //TODO replace with actual player handling
+    private String users;
+
+    //TODO replace with actual ruleSet handling
+    private String ruleSet;
+
     public Long getId() {
         return id;
     }
@@ -50,5 +56,21 @@ public class DartGame {
 
     public void setUser(Collection<UserAccount> user) {
         this.user = user;
+    }
+
+    public String getUsers() {
+        return users;
+    }
+
+    public void setUsers(String users) {
+        this.users = users;
+    }
+
+    public String getRuleSet() {
+        return ruleSet;
+    }
+
+    public void setRuleSet(String ruleSet) {
+        this.ruleSet = ruleSet;
     }
 }

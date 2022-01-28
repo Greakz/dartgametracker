@@ -23,6 +23,7 @@ public class DartTurn {
     @OneToMany(mappedBy = "turn", fetch = FetchType.LAZY)
     private Collection<DartThrow> dartThrows;
 
+    private String userString;
 
     public Long getId() {
         return id;
@@ -62,6 +63,14 @@ public class DartTurn {
 
     public void setDartThrows(Collection<DartThrow> dartThrows) {
         this.dartThrows = dartThrows;
+    }
+
+    public String getUserString() {
+        return userString;
+    }
+
+    public void setUserString(String userString) {
+        this.userString = userString;
     }
 }
 
