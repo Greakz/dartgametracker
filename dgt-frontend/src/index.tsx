@@ -7,7 +7,7 @@ import {rootSaga} from "./Redux/RootSaga";
 import createSagaMiddleware from "redux-saga";
 import {initialRootState, RootState} from "./Redux/RootState";
 import {RootAction} from "./Redux/RootAction";
-import ApplicationRouting from "./View/Components/ApplicationRouting";
+import Layout from "./View/Layout";
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -22,7 +22,7 @@ export const store: Store<RootState, RootAction> = createStore(
 ReactDOM.render(
     <Provider store={store}>
         <React.StrictMode>
-            <ApplicationRouting/>
+            <Layout/>
         </React.StrictMode>
     </Provider>,
     document.getElementById('root')
