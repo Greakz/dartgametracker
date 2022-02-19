@@ -1,0 +1,71 @@
+.input-sidebar-inset {
+    padding-right: 200px;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+.input-sidebar {
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 200px;
+    background: rgba(44, 44, 84, 1.0);
+}
+
+.classic-game {
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+}
+
+.classic-game .classic-game-header {
+    display: flex;
+    flex-direction: row;
+    height: 70px;
+}
+
+.classic-game .classic-game-hr {
+    display: flex;
+    flex-direction: row;
+    height: 8px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.classic-game-header .title {
+    height: 100%;
+    padding: 16px;
+    font-size: 2.2em;
+    width: calc(33.333% - 5px);
+}
+
+.classic-game-header .turn {
+    height: 100%;
+    padding: 8px;
+    font-size: 1.1em;
+    margin-left: 8px;
+    width: calc(33.333% - 5px);
+}
+.classic-game-header .turn .value {
+    float: right;
+}
+.classic-game-header .statistics {
+    height: 100%;
+    padding: 8px;
+    font-size: 1.1em;
+    margin-left: 8px;
+    width: calc(33.333% - 6px);
+}
+.classic-game-header .statistics .value {
+    float: right;
+}
+.classic-game-header .statistics .title {
+    font-weight: bold;
+}
+
+
+.classic-game .classic-game-player-scores {
+
+}

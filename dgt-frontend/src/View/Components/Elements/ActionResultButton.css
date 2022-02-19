@@ -1,0 +1,194 @@
+:root {
+    --action-result-button-color: rgba(230, 126, 34, 0.5);
+    --action-result-button-color-success: rgba(39, 174, 96, 0.5);
+    --action-result-button-color-failure: rgba(245, 38, 12, 0.5);
+}
+
+.ar-btn {
+    width: 100px;
+    height: 36px;
+    color: #FFF;
+    background-color: var(--action-result-button-color);
+    border: none;
+    border-radius: .125em;
+    padding: 1em 2.5em;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* border: 1px solid rgba(230, 126, 34,1.0); */
+}
+
+.ar-btn .action-button-svg {
+    position: absolute;
+    color: #FFF;
+    left: calc(50% - 18px);
+    right: calc(50% - 18px);
+    top: 0;
+    bottom: 0;
+    opacity: 0;
+    transition: opacity 0.1s ease-in-out;
+    z-index: 20;
+}
+
+.ar-btn.actionform {
+    background-color: transparent;
+    color: transparent;
+    border-color: transparent;
+    cursor: default;
+}
+
+.ar-btn.actionform .action-button-svg {
+    opacity: 1;
+}
+.ar-btn.success .action-button-svg {
+    animation: fadein 300ms forwards;
+}
+.ar-btn.failure .action-button-svg {
+    opacity: 1;
+    animation: shake 300ms forwards;
+}
+
+.ar-btn::before {
+    content: "";
+    background-color: var(--action-result-button-color);
+    position: absolute;
+    inset: 0;
+    cursor: pointer;
+    display: none;
+    border-radius: .125em;
+    animation: actionform 200ms forwards;
+    /* border: 1px solid rgba(230, 126, 34,1.0); */
+}
+
+.ar-btn.actionform::before
+{
+    display: block;
+}
+
+.ar-btn.success::before {
+    animation: successform 400ms forwards;
+}
+
+.ar-btn.failure::before {
+    animation: failureform 400ms forwards;
+}
+
+#loading-circle-1 {
+    animation: appear 900ms infinite;
+    transform: scale(0);
+}
+#loading-circle-2 {
+    transform: scale(0);
+    animation: appear 900ms infinite;
+    animation-delay: 150ms;
+}
+#loading-circle-3 {
+    transform: scale(0);
+    animation: appear 900ms infinite;
+    animation-delay: 300ms;
+}
+
+@keyframes appear {
+    0% {
+        transform: scale(0);
+    }
+    30% {
+        transform: scale(1);
+    }
+    86% {
+        transform: scale(0);
+    }
+}
+
+@keyframes successform {
+    0% {
+        top: 0;
+        bottom: 0;
+        left: calc(50% - 18px);
+        right: calc(50% - 18px);
+    }
+    100% {
+        top: 0;
+        bottom: 0;
+        left: calc(50% - 18px);
+        right: calc(50% - 18px);
+        border-radius: 9px;
+        background-color: var(--action-result-button-color-success);
+    }
+}
+
+@keyframes failureform {
+    0% {
+        top: 0;
+        bottom: 0;
+        left: calc(50% - 18px);
+        right: calc(50% - 18px);
+    }
+    50% {
+        background-color: var(--action-result-button-color-failure);
+    }
+    100% {
+        top: 0;
+        bottom: 0;
+        left: calc(50% - 18px);
+        right: calc(50% - 18px);
+        border-radius: 0px;
+        background-color: var(--action-result-button-color-failure);
+    }
+}
+@keyframes shake {
+    0% { transform: translate(0px, 0px) }
+    10% { transform: translate(1px, 0px) }
+    20% { transform: translate(-1px, 0px) }
+    30% { transform: translate(1px, 0px); }
+    40% { transform: translate(1px, 0px); }
+    50% { transform: translate(-1px, 0px); }
+    60% { transform: translate(-1px, 0px); }
+    70% { transform: translate(1px, 0px); }
+    80% { transform: translate(-1px, 0px); }
+    90% { transform: translate(1px, 0px); }
+    100% { transform: translate(0px, 0px); }
+}
+
+@keyframes fadein {
+    0% { opacity: 0 }
+    100% { opacity: 1 }
+}
+
+/*
+@keyframes successcircle {
+    0% {
+        left: 0;
+        right: 0;
+        top: calc(50% - 4px);
+        bottom: calc(50% - 4px);
+        border-color: rgba(230, 126, 34,1.0);
+    }
+    50% {
+        top: calc(50% - 4px);
+        bottom: calc(50% - 4px);
+        left: calc(50% - 18px);
+        right: calc(50% - 18px);
+        border-color: rgba(39, 174, 96,1.0);
+    }
+    100% {
+        top: 0;
+        bottom: 0;
+        left: calc(50% - 18px);
+        right: calc(50% - 18px);
+        border-radius: 9px;
+        border-color: rgba(39, 174, 96,1.0);
+    }
+}
+*/
+
+@keyframes actionform {
+    100% {
+        left: calc(50% - 18px);
+        right: calc(50% - 18px);
+        border-radius: .25em;
+    }
+}

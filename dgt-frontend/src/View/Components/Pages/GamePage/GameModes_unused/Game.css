@@ -1,0 +1,98 @@
+.top-chip-container {
+    display: inline-flex;
+    justify-content: flex-start;
+}
+
+.top-chip {
+    width: 240px;
+    font-size: 1.6em;
+    display: inline-flex;
+    justify-content: space-between;
+    margin-right: 16px;
+    margin-bottom: 16px;
+}
+
+.player-container {
+    display: inline-flex;
+    flex-direction: column;
+    width: 280px;
+    margin-right: 16px;
+    justify-content: flex-start;
+}
+
+.player-container .name-plate {
+    width: 100%;
+    padding: 0.6em 1em;
+    text-align: center;
+    font-size: 1.4em;
+    margin-bottom: 4px;
+    border-left: 2px solid var(--primary-color);
+}
+
+.player-container .name-plate.active {
+    color: var(--primary-color);
+}
+
+.player-container .player-game-data {
+    display: flex;
+}
+
+.player-container .player-game-data .statistics {
+    width: 100px;
+    display: inline-flex;
+    flex-direction: column;
+    margin-right: 4px;
+    justify-content: flex-start;
+    border-left: 2px solid var(--primary-color);
+}
+
+.player-container .player-game-data .statistics .fact {
+    font-size: 1.2em;
+    margin-bottom: 0.25em;
+}
+.player-container .player-game-data .statistics .fact-result {
+    font-size: 1em;
+    margin-bottom: 2em;
+    text-align: right;
+}
+
+
+.player-container .player-game-data .scores {
+    width: 176px;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.player-container .player-game-data .scores .single-score {
+    margin-bottom: 4px;
+    height: 42px;
+    display: flex;
+}
+.player-container .player-game-data .scores .single-score .throws {
+    width: 100px;
+    display: inline-flex;
+    flex-direction: column;
+    margin-right: 4px;
+    height: 100%;
+    /* border-left: 2px solid var(--primary-color);*/
+}
+.player-container .player-game-data .scores .single-score .throws .darts-sum {
+    width: 100%;
+    text-align: center;
+    font-size: 1.4em;
+}
+.player-container .player-game-data .scores .single-score .throws .single-darts {
+    width: 100%;
+    text-align: center;
+    font-size: 1em;
+}
+.player-container .player-game-data .scores .single-score .result {
+    width: 72px;
+    font-size: 1.7em;
+    text-align: center;
+    padding: 0.3em;
+    height: 100%;
+}
+.player-container .player-game-data .scores .single-score .result.active {
+    color: var(--primary-color);
+}

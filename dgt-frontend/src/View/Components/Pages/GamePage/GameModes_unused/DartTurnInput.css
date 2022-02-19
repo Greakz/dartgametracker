@@ -1,0 +1,63 @@
+.dart-turn-input {
+    width: 100%;
+    height: 100%;
+    border-left: 0.2em solid var(--primary-color);
+    padding-left: 3%;
+}
+
+.dart-turn-input .top-input {
+    display: flex;
+    justify-content: center;
+    height: 55%;
+    padding-top: 2px;
+}
+.dart-turn-input .bottom-input {
+    display: flex;
+    justify-content: center;
+    height: 45%;
+    padding-bottom: 2px;
+    padding-top: 2px;
+}
+
+.dart-turn-input .top-input input {
+    all: unset;
+    background: rgba(112, 111, 211,0.3);
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 2px;
+    margin-right: 3%;
+    text-align: center;
+}
+.dart-turn-input .bottom-input input {
+    all: unset;
+    background: rgba(112, 111, 211,0.3);
+    color: #fff;
+    width: 31%;
+    height: 100%;
+    margin-right: 3%;
+    text-align: center;
+}
+
+.commit-button {
+    cursor: pointer;
+    text-align: right !important;
+    padding-right: 24px !important;
+}
+.commit-button:hover {
+    color: var(--hover-color);
+    background: rgba(130, 129, 231,0.3);
+}
+.commit-button:active {
+    padding-right: 23px !important;
+    user-select: none;
+}
+.commit-button:active > svg{
+    right: 2px;
+}
+.commit-button svg {
+    position: absolute;
+    top: 9px;
+    right: 3px;
+    color: var(--primary-color);
+}

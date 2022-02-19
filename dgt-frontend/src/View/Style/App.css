@@ -1,3 +1,29 @@
+:root {
+    /* NEW COLOR PALETTE */
+    --background-color-top-left: #3d486a;
+    --background-color-bottom-right: #262f49;
+    --background-color-sidebar: rgba(63, 75, 110, 0.8);
+    --background-color-element-lighter-shade: #525e7f;
+    --background-color-element-darker-shade: #374265;
+    --background-color-element-active-shade: #32ba3c;
+    --hr-color: rgba(236, 240, 241, 0.3);
+    --text-color: #ecf0f1;
+
+    --primary-color: rgba(250, 130, 49, 1.0);
+    --success-color: #6ab04c;
+    --error-color: #c0392b;
+    --disabled-color: rgba(150, 150, 150,  1.0);
+
+
+    --background-color: #1d1d38;
+    --background-color-shade: #232348;
+    --font-color: rgba(255, 255, 255,  1.0);
+    --secondary-color: rgba(56, 103, 214, 1.0);
+    --link-color: var(--primary-color);
+    --hover-color: rgb(253, 150, 68);
+    --active-color: var(--primary-color);
+}
+
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,165 +31,67 @@ body {
     sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    color: rgba(236, 240, 241, 1.0);
-    background: rgb(0, 64, 103);
-    background: linear-gradient(36deg, rgba(52, 73, 94, 1.0) 0%, rgba(44, 62, 80, 1.0) 23%, rgba(44, 62, 80, 1.0) 100%);
+    color: var(--text-color);
+    background: #5758BB;
+    background: linear-gradient(26deg, var(--background-color-top-left) 0%, var(--background-color-bottom-right) 100%);
     width: 100%;
     height: 100vh;
     padding: 0;
     font-size: 12px;
     box-sizing: border-box;
 }
-
-a, a:visited {
-    color: rgba(230, 126, 34, 1.0);
-    transition: color 0.1s ease;
-}
-
-a:hover {
-    color: rgb(245, 141, 50);
-}
-
-a:active {
-    color: rgba(231, 76, 60, 1.0);
-}
-
-hr {
-    border-bottom: 1px solid rgba(230, 126, 34, 1.0);
-    border-right: 0;
-    border-left: 0;
-    border-top: 0;
-    margin: 8px 16px;
-}
-
-button {
-    height: 32px;
-    min-width: 80px;
-    -webkit-appearance: none;
-    appearance: none;
-    border: 1px solid rgba(230, 126, 34, 1);
-    background-color: rgba(230, 126, 34, .3);
-    backdrop-filter: blur(2px);
-    outline: none;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-    color: rgba(236, 240, 241, 1.0)
-}
-
-button:hover {
-    background-color: rgba(230, 126, 34, .8);
-}
-
-button:active {
-    background-color: rgba(231, 76, 60, 1.0)
-
-}
-button:disabled {
-    background-color: rgba(80, 80, 80, 1.0);
-    cursor: default;
-}
-
 div {
     box-sizing: border-box;
 }
 
-code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.btn-w-icon {
+    display: inline-flex;
+    flex-direction: row;
+    align-content: flex-start;
+    cursor: pointer;
+    border-radius: 8px;
+    border: 1px solid var(--background-color-element-lighter-shade);
+    transition: background-color 0.1s ease-in-out;
+    user-select: none;
 }
 
-input {
-    height: 32px;
-    -webkit-appearance: none;
-    appearance: none;
-    border: 1px solid rgba(230, 126, 34, 0.8);
-    background-color: rgba(255, 227, 190, .1);
-    backdrop-filter: blur(2px);
-    outline: none;
-    width: 100%;
-    box-sizing: border-box;
-    color: rgba(236, 240, 241,1.0);
-}
-input:disabled {
-    color: rgba(127, 140, 141,1.0);
-    border: 1px solid rgba(230, 126, 34, 0.6);
-    background-color: rgba(255, 227, 190, .05);
+.btn-w-icon:hover {
+    background: var(--background-color-element-lighter-shade);
 }
 
-.input-container {
-    text-align: left;
-    clear: both;
-    width: 240px;
-    padding: 4px;
-    margin: 0 auto 4px auto;
-}
-
-.red {
-    color: rgba(192, 57, 43,1.0);
-}
-
-.green {
-    color: rgba(39, 174, 96,1.0);
-}
-
-.container {
-    text-align: left;
-    clear: both;
-    margin: 8px;
-}
-
-.border {
-    border: 1px solid rgba(230, 126, 34,1.0);
-}
-
-.header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-}
-
-.App {
-    padding: 32px;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    height: 100vh;
-}
-
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
-}
-
-.App-header {
-    background-color: #282c34;
-    min-height: 100vh;
+.btn-w-icon .icon {
+    width: 36px;
+    height: 36px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+    align-content: center;
+    padding: 5px;
 }
 
-.App-link {
-    color: #61dafb;
+.btn-w-icon .text {
+    height: 36px;
+    text-transform: uppercase;
+    padding: 9px 16px 9px 0;
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.flex-v {
+    display: flex;
+    flex-direction: column;
+}
+
+.i-flex {
+    display: inline-flex;
+}
+
+a, a:visited, a:hover, a:active {
+    all: unset;
 }
 
 .login-panel {
@@ -175,4 +103,20 @@ input:disabled {
     width: 360px;
     height: 480px;
     align-self: center;
+}
+
+.v-scroll {
+    overflow-y: auto;
+}
+.v-scroll::-webkit-scrollbar {
+    width: 6px;
+}
+.v-scroll::-webkit-scrollbar-track {
+    background: var(--hr-color);
+}
+.v-scroll::-webkit-scrollbar-thumb {
+    background: var(--text-color);
+}
+.v-scroll::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color);
 }

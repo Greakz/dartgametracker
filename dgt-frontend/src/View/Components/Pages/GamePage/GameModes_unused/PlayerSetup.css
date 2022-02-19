@@ -1,0 +1,51 @@
+.game-vertical-flex {
+    display: inline-flex;
+    flex-direction: column;
+    width: auto;
+}
+
+.player-setup {
+    max-width: 600px;
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.player-setup .chevrons {
+    width: 2.2em;
+    height: 3.2em;
+}
+
+
+.player-setup .chevrons .chevron-wrap {
+    width: 2.2em;
+    height: 1.6em;
+}
+
+.player-setup .chevrons .chevron-wrap:hover {
+    color: var(--hover-color);
+    cursor: pointer;
+}
+.player-setup .chevrons .chevron-wrap:active {
+    color: var(--hover-color);
+    cursor: pointer;
+    padding-left: 1px;
+    margin-right: -1px;
+}
+
+.player-setup .chevrons .chevron-wrap svg {
+    margin-top: -0.1em;
+}
+
+.player-setup .chevrons .chevron-wrap.disabled {
+    color: var(--disabled-color);
+    padding-left: 0;
+    margin-right: 0;
+    cursor: default;
+}
+.player-setup .delete-option {
+    margin-left: 0.5em;
+}
+.player-setup .delete-option:hover > svg {
+    color: var(--error-color);
+}
+
