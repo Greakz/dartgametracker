@@ -1,0 +1,36 @@
+.welcome-container {
+    display: flex;
+    justify-content: center;
+}
+
+.welcome-container.blend-in {
+    animation: blend-in 1000ms forwards;
+}
+@keyframes blend-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.welcome-container-vert-flex {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.header-logo {
+    padding: 2em 0;
+    font-size: 3em;
+    text-align: center;
+}
+
+.login-form {
+    display: inline-flex;
+    width: 320px;
+    flex-direction: column;
+    height: 210px;
+    justify-content: space-between;
+}

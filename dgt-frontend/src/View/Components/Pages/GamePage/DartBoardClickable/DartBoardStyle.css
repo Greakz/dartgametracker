@@ -1,0 +1,79 @@
+.black-field {
+    stroke-width: 0.1;
+    stroke: #000;
+    fill: #111;
+    z-index: 1;
+}
+
+.yellow-field {
+    stroke-width: 0.1;
+    stroke: #000;
+    fill: #e4d2b8;
+    z-index: 1;
+}
+
+.red-field {
+    stroke-width: 0.1;
+    stroke: #000;
+    fill: #b71416;
+    z-index: 1;
+}
+
+.green-field {
+    stroke-width: 0.1;
+    stroke: #000;
+    fill: #149a39;
+    z-index: 1;
+}
+
+.black-field:hover, .yellow-field:hover, .red-field:hover, .green-field:hover {
+    fill: rgba(112, 111, 211, 1);
+    cursor: pointer;
+}
+
+.dart-board-elevation {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: -339px;
+    left: -50%;
+    padding: 1em;
+    -webkit-box-shadow: 1px 1px 4px 0px rgba(0,0,0,0.45);
+    box-shadow: 1px 1px 4px 0px rgba(0,0,0,0.45);
+    background-color: rgba(205, 230, 245, 0.4);
+    overflow: visible;
+}
+
+.dart-board-elevation .throw-result {
+    width: 48px;
+    height: 28px;
+    margin: 0 8px;
+    text-align: center;
+    font-size: 1.4em;
+    padding-top: 2px;
+    background: #363667;
+    color: #fff;
+}
+
+.dart-board-elevation .reset-button {
+    width: 48px;
+    height: 24px;
+    left: 4px;
+    top: 4px;
+    font-size: 0.8em;
+    position: absolute;
+
+}
+.dart-board-elevation .reset-button button {
+    height: 100%;
+    width: 100%;
+    background: #363667;
+    color: #fff;
+    padding-top: 0.4em;
+}
+
+.dart-board-elevation .throw-result.active {
+    -webkit-box-shadow: inset 1px 1px 3px 0px rgba(0,0,0,0.34);
+    box-shadow: inset 1px 1px 3px 0px rgba(0,0,0,0.34);
+    border-left: 0.2em solid rgba(255, 121, 63,1.0);
+}

@@ -1,10 +1,16 @@
 import React from 'react';
-import '../Style/App.css';
-import {BrowserRouter, Outlet, Route, Routes, Navigate} from "react-router-dom";
-import Register from "./Pages/Register";
-import Login from "./Pages/Login";
-import Home from "./Pages/Home";
-import CreateGame from "./Pages/CreateGame";
+import {BrowserRouter, Navigate, Outlet, Route, Routes} from "react-router-dom";
+import './../Style/App.css';
+import './../Style/MarginsPaddings.css';
+import './../Style/Global.css';
+import WelcomePage from "./Pages/WelcomePage/WelcomePage";
+import DashboardPage from "./Pages/DashboardPage/DashboardPage";
+import HistoryPage from "./Pages/HistoryPage/HistoryPage";
+import SettingsPage from "./Pages/SettingsPage/SettingsPage";
+import ClassicGamePage from "./Pages/GamePage/ClassicGame/ClassicGamePage";
+import GamePage from "./Pages/GamePage/GamePage";
+import AuthSidebar from "./AuthSidebar/AuthSidebar";
+import FriendsSidebar from "./FriendsSidebar/FriendsSidebar";
 
 function ApplicationRouting() {
     /*
@@ -17,19 +23,34 @@ function ApplicationRouting() {
     }
     */
     return (
-        <div className="App">
-            <BrowserRouter>
-                <Routes>
-                    <Route path="/" element={<Outlet />}>
-                        <Route path="register" element={<Register/>}/>
-                        <Route path="login" element={<Login/>}/>
-                        <Route path="create-game" element={<CreateGame/>}/>
-                        <Route path="home" element={<Home/>}/>
-                        <Route path="/" element={<Navigate replace to="/login" />} />
-                    </Route>
-                </Routes>
-            </BrowserRouter>
-        </div>
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<Outlet/>}>
+                    {/* Public routes */}
+                    <Route path="login" element={<WelcomePage/>}/>
+                </Route>
+            </Routes>
+
+            <AuthSidebar>
+                <FriendsSidebar>
+                    <Routes>
+                        <Route path="/" element={<Outlet/>}>
+
+                            {/* Private routes */}
+                            <Route path="dashboard" element={<DashboardPage/>}/>
+                            <Route path="/game" element={<GamePage/>}/>
+                            <Route path="/game/classic" element={<ClassicGamePage/>}/>
+
+                            <Route path="history" element={<HistoryPage/>}/>
+                            <Route path="settings" element={<SettingsPage/>}/>
+                            <Route path="/" element={<Navigate replace to="/login"/>}/>
+                        </Route>
+                    </Routes>
+
+                </FriendsSidebar>
+            </AuthSidebar>
+
+        </BrowserRouter>
     );
 }
 

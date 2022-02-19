@@ -1,0 +1,15 @@
+.dashboard-chips {
+    display: flex;
+    justify-content: space-between;
+}
+
+.dashboard-chips .chip {
+    width: 33%;
+    height: 180px;
+}
+
+.dashboard-chips .chip-title {
+    font-size: 1.4em;
+    padding-bottom: 1em;
+    color: var(--primary-color);
+}

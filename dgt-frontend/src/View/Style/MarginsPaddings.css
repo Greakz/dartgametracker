@@ -1,0 +1,33 @@
+/* Padding/Margin Container */
+.p025{
+    padding: 0.25em;
+}
+
+.p1 {
+    padding: 1em;
+}
+
+.p2 {
+    padding: 2em;
+}
+
+.mt_05 {
+    margin-top: 0.5em;
+}
+
+
+.mt_1 {
+    margin-top: 1em;
+}
+
+.mt_2 {
+    margin-top: 2em;
+}
+
+.m1 {
+    margin: 1em;
+}
+
+.m2 {
+    margin: 2em;
+}

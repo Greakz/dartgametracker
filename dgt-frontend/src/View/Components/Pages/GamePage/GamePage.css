@@ -1,0 +1,51 @@
+.game-type-chips {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap
+}
+
+.game-type-chips a {
+    display: inline-block;
+    width: 280px;
+    margin-right: 1em;
+}
+
+.game-type-chips .chip {
+    width: calc(100% / 3 - 4em);
+    height: 180px;
+    user-select: none;
+    min-width: 280px;
+    margin-bottom: 1em;
+}
+
+.game-type-chips .chip:hover {
+    border-left: 2px solid var(--hover-color);
+    padding-left: calc(2em - 2px);
+    background-color: rgba(205, 230, 245, 0.13);
+    cursor: pointer;
+}
+.game-type-chips .chip:active {
+    padding-left: calc(2em - 1px);
+    padding-right: calc(2em - 1px);
+}
+
+.game-type-chips .chip-description {
+    padding-bottom: 1em;
+}
+
+.game-type-chips .chip-title {
+    font-size: 1.4em;
+    padding-bottom: 1em;
+    color: var(--hover-color);
+}
+
+.create-game-text {
+    padding-bottom: 2em;
+}
+
+.play-button {
+    width: 120px;
+    position: absolute;
+    bottom: 2em;
+    right: 2em;
+}

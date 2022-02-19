@@ -1,0 +1,109 @@
+.sidebar {
+    background: var(--background-color-sidebar);
+    -webkit-box-shadow: 2px 1px 5px 0px rgba(0,0,0,0.15);
+    box-shadow: 2px 1px 5px 0px rgba(0,0,0,0.15);
+    width: 200px;
+    height: 100vh;
+    padding: 2em;
+    position: fixed;
+    left: 0;
+    z-index: 2;
+}
+
+.sidebar-inset {
+    position: fixed;
+    z-index: 1;
+    padding-left: 200px;
+    inset: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.sidebar-inset.blend-in {
+    animation: blend-in 200ms forwards;
+}
+@keyframes blend-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.sidebar .vertical-order {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.sidebar .vertical-order .top {
+
+}
+.sidebar .vertical-order .bottom {
+
+}
+
+.sidebar-link {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    margin-left: -2em;
+    margin-right: -2em;
+    padding: 0.6em 2em 0.4em 2em;
+    cursor: pointer;
+}
+
+.logout-button {
+    -webkit-appearance: none;
+    border: 0;
+    width: 100%;
+    background: transparent;
+    color: inherit;
+}
+
+.sidebar-link:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: var(--hover-color);
+}
+
+.sidebar-link:active {
+    padding-left: calc(2em + 1px)
+}
+
+.sidebar-link .icon {
+}
+
+.sidebar-link .text {
+    padding: 0.25em;
+    padding-left: 1em;
+}
+
+
+.imprint {
+    margin-top: 0.6em;
+    padding: 0.3em 0;
+    cursor: pointer;
+}
+.imprint:hover {
+    color: var(--hover-color)
+}
+.tos {
+    padding: 0.3em 0;
+    cursor: pointer;
+}
+.tos:hover {
+    color: var(--hover-color)
+}
+.support {
+    padding: 0.3em 0;
+    cursor: pointer;
+}
+.support:hover {
+    color: var(--hover-color)
+}
+.copyright {
+    margin-top: 0.6em;
+    padding: 0.2em 0;
+    color: var(--disabled-color)
+}
