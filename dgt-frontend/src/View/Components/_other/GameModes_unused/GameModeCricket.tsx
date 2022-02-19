@@ -1,8 +1,8 @@
 import React, {Dispatch} from "react";
 import {connect} from "react-redux";
-import {RootState} from "../../../../../Redux/RootState";
-import {RootAction} from "../../../../../Redux/RootAction";
-import AuthSidebar from "../../../AuthSidebar/AuthSidebar";
+import {RootState} from "../../../../Redux/RootState";
+import {RootAction} from "../../../../Redux/RootAction";
+import AuthSidebar from "../../Sidebars/AuthSidebar";
 
 interface StateProps {
 

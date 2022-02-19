@@ -1,5 +1,5 @@
 import React, {ChangeEvent} from "react";
-import DartBoardSvgClickable, {DartBoardHit, DartBoardHitType} from "../DartBoardClickable/DartBoardSvgClickable";
+import DartBoardSvgClickable, {DartBoardHit, DartBoardHitType} from "../../PagesAuth/GamePage/DartBoardClickable/DartBoardSvgClickable";
 
 interface ComponentProps {
     updateResult: (result: number, throws: DartBoardHit[]) => void;

@@ -3,12 +3,12 @@ import {Navigate, Outlet, Route, Routes} from "react-router-dom";
 import './../Style/App.css';
 import './../Style/MarginsPaddings.css';
 import './../Style/Global.css';
-import WelcomePage from "./Pages/WelcomePage/WelcomePage";
-import DashboardPage from "./Pages/DashboardPage/DashboardPage";
-import HistoryPage from "./Pages/HistoryPage/HistoryPage";
-import SettingsPage from "./Pages/SettingsPage/SettingsPage";
-import ClassicGamePage from "./Pages/GamePage/ClassicGame/ClassicGamePage";
-import GamePage from "./Pages/GamePage/GamePage";
+import WelcomePage from "./PagesPublic/WelcomePage/WelcomePage";
+import DashboardPage from "./PagesAuth/DashboardPage/DashboardPage";
+import HistoryPage from "./PagesAuth/HistoryPage/HistoryPage";
+import SettingsPage from "./PagesAuth/SettingsPage/SettingsPage";
+import ClassicGamePage from "./AuthPages/GamePage/ClassicGame/ClassicGamePage";
+import GamePage from "./PagesAuth/GamePage/GamePage";
 
 function ApplicationRouting(props: { auth: boolean }) {
     return (

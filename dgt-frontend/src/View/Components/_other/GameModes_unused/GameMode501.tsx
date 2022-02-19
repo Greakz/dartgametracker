@@ -1,15 +1,15 @@
 import React, {Dispatch} from "react";
 import {connect} from "react-redux";
-import {RootState} from "../../../../../Redux/RootState";
-import {RootAction} from "../../../../../Redux/RootAction";
-import AuthSidebar from "../../../AuthSidebar/AuthSidebar";
+import {RootState} from "../../../../Redux/RootState";
+import {RootAction} from "../../../../Redux/RootAction";
+import AuthSidebar from "../../Sidebars/AuthSidebar";
 import PlayerSetup from "./PlayerSetup";
-import {GamePlayer} from "../../../../../Entity/GamePlayer";
-import {DartGame} from "../../../../../Entity/DartGame";
+import {GamePlayer} from "../../../../Entity/GamePlayer";
+import {DartGame} from "../../../../Entity/DartGame";
 import './Game.css';
 import DartBoardThrowSelection from "./DartBoardThrowSelection";
-import {DartBoardHit} from "../DartBoardClickable/DartBoardSvgClickable";
-import {DartGameTurn} from "../../../../../Entity/DartGameTurn";
+import {DartGameTurn} from "../../../../Entity/DartGameTurn";
+import {DartBoardHit} from "../../PagesAuth/GamePage/DartBoardClickable/DartBoardSvgClickable";
 
 interface StateProps {
 

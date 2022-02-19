@@ -5,8 +5,8 @@ import {RootState} from "../../../../../../Redux/RootState";
 import {DartBoardHit} from "../../DartBoardClickable/DartBoardSvgClickable";
 import {DartGame} from "../../../../../../Entity/DartGame";
 import {RootAction} from "../../../../../../Redux/RootAction";
-import AuthSidebar from "../../../../AuthSidebar/AuthSidebar";
-import GamePlayerScores from "./GamePlayerScores/GamePlayerScores";
+import AuthSidebar from "../../../../Sidebars/AuthSidebar";
+import GamePlayerScores from "./GamePlayerScores";
 
 interface StateProps {
 

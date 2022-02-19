@@ -4,7 +4,6 @@ import {RootState} from "../../../../Redux/RootState";
 import {RootAction} from "../../../../Redux/RootAction";
 import './WelcomePage.css';
 import {Link} from "react-router-dom";
-import {Login} from "@mui/icons-material";
 
 interface StateProps {
 

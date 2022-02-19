@@ -1,9 +1,9 @@
 import React, {ChangeEvent, Dispatch} from "react";
 import {connect} from "react-redux";
-import {RootState} from "../../../../../Redux/RootState";
-import {RootAction} from "../../../../../Redux/RootAction";
+import {RootState} from "../../../../Redux/RootState";
+import {RootAction} from "../../../../Redux/RootAction";
 import './DartTurnInput.css';
-import {DartGameThrow} from "../../../../../Entity/DartGameThrow";
+import {DartGameThrow} from "../../../../Entity/DartGameThrow";
 import {ArrowRight, ChevronRight} from "@mui/icons-material";
 
 

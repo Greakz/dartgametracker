@@ -1,4 +1,4 @@
-import '../DartBoardClickable/DartBoardStyle.css'
+import '../../../AuthPages/GamePage/DartBoardClickable/DartBoardStyle.css'
 
 const doubleSize = 0.595;
 const topSingleSize = 3.155;

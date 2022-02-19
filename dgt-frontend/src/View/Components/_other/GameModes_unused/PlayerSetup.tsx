@@ -1,9 +1,9 @@
 import React, {ChangeEvent, Dispatch} from "react";
 import {connect} from "react-redux";
-import {RootState} from "../../../../../Redux/RootState";
-import {RootAction} from "../../../../../Redux/RootAction";
+import {RootState} from "../../../../Redux/RootState";
+import {RootAction} from "../../../../Redux/RootAction";
 import './PlayerSetup.css';
-import {GamePlayer} from "../../../../../Entity/GamePlayer";
+import {GamePlayer} from "../../../../Entity/GamePlayer";
 import {Add, Delete, KeyboardArrowDown, KeyboardArrowUp} from "@mui/icons-material";
 
 interface ComponentProps {

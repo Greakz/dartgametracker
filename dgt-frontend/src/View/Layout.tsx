@@ -2,8 +2,8 @@ import * as React from "react";
 import {RootState} from "../Redux/RootState";
 import {RootAction} from "../Redux/RootAction";
 import {connect, DispatchProp} from "react-redux";
-import AuthSidebar from "./Components/AuthSidebar/AuthSidebar";
-import FriendsSidebar from "./Components/FriendsSidebar/FriendsSidebar";
+import AuthSidebar from "./Components/Sidebars/AuthSidebar";
+import FriendsSidebar from "./Components/Sidebars/FriendsSidebar";
 import ApplicationRouting from "./Components/ApplicationRouting";
 import {BrowserRouter} from "react-router-dom";
 
