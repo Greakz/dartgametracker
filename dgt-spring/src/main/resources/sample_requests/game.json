@@ -1,0 +1,77 @@
+{
+  "type": "CRICKET",
+  "ruleSet": {
+    "doubleIn": true,
+    "doubleOut": false
+  },
+  "users": [
+    "Luke",
+    "Tim",
+    "Adrian"
+  ],
+  "turns": [
+    {
+      "turnNumber": 1,
+      "user": "Luke",
+      "dartThrows": [
+        {
+          "number": 20,
+          "throwType": "SINGLE",
+          "result": "20"
+        },
+        {
+          "number": 20,
+          "throwType": "DOUBLE",
+          "result": "40"
+        },
+        {
+          "number": 20,
+          "throwType": "TRIPLE",
+          "result": "60"
+        }
+      ]
+    },
+    {
+      "turnNumber": 2,
+      "user": "Tim",
+      "dartThrows": [
+        {
+          "number": 20,
+          "throwType": "SINGLE",
+          "result": "20"
+        },
+        {
+          "number": 20,
+          "throwType": "DOUBLE",
+          "result": "40"
+        },
+        {
+          "number": 20,
+          "throwType": "TRIPLE",
+          "result": "60"
+        }
+      ]
+    },
+    {
+      "turnNumber": 3,
+      "user": "Adrian",
+      "dartThrows": [
+        {
+          "number": 20,
+          "throwType": "SINGLE",
+          "result": "20"
+        },
+        {
+          "number": 20,
+          "throwType": "DOUBLE",
+          "result": "40"
+        },
+        {
+          "number": 20,
+          "throwType": "TRIPLE",
+          "result": "60"
+        }
+      ]
+    }
+  ]
+}

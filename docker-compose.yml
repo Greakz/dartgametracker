@@ -12,9 +12,9 @@ services:
   app:
     build:
       context: .
-      dockerfile: ./dgt-backend/Dockerfile.dev
+      dockerfile: ./dgt-spring/Dockerfile.dev
     volumes:
-      - ./dgt-backend/src:/app/src
+      - ./dgt-spring/src:/app/src
     ports:
       - "8000:8000"
     depends_on:
