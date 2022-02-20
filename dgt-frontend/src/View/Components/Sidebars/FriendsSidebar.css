@@ -1,6 +1,7 @@
 .sidebar-r {
-    width: 200px;
-    height: 100vh;
+    width: 240px;
+    height: calc(100vh - 16px);
+    margin-top: 8px;
     position: fixed;
     right: 0;
     z-index: 2;
@@ -9,7 +10,7 @@
 
 .sidebar-inset-r {
     position: relative;
-    padding-right: 200px;
+    padding-right: 240px;
     padding-bottom: 48px;
     width: 100%;
     height: 100vh;
@@ -20,9 +21,9 @@
 .bottom-line {
     position: fixed;
     bottom: 0;
-    right: 208px;
-    left: 208px;
-    height: 40px;
+    right: 248px;
+    left: 248px;
+    height: 48px;
     border-top: 1px solid var(--hr-color);
     display: flex;
     flex-direction: row-reverse;
@@ -37,9 +38,10 @@
 }
 
 .sidebar-r .vertical-order .friend-list-header {
-    font-size: 10pt;
-    font-weight: bold;
+    font-size: 14pt;
     margin: 0 4px 0 8px;
+    padding: 16px 0 8px 0;
+    flex-grow: 0;
 }
 
 .friend-list-entries {
@@ -50,8 +52,118 @@
     margin-left: 8px;
     padding-right: 8px;
     margin-right: 4px;
-    border-top: 1px solid var(--hr-color)
+    border-top: 1px solid var(--hr-color);
+    margin-bottom: -8px;
+    flex-grow: 1;
 }
+
+.friend-list-entries.open-requests {
+    display: inline-flex;
+    height: auto;
+    padding: 0;
+    margin: 0 8px 8px 8px;
+    flex-grow: 0;
+}
+
+.friend-list-entries .header {
+    margin-top: 8px;
+    font-size: 8pt;
+}
+.friend-list-entries .header.primary {
+    color: var(--primary-color);
+}
+
+.friend-list-entries.open-requests .request {
+    margin-top: 8px;
+    background: var(--background-color-sidebar);
+    border-radius: 8px;
+    height: 28px;
+    display: flex;
+    flex-direction: row;
+}
+.friend-list-entries.open-requests .request .avatar-left {
+    width: 24px;
+    height: 24px;
+    margin: 2px;
+    border-radius: 6px;
+    text-align: center;
+    background: rgba(0,0,0,0.2);
+    flex-grow: 0;
+}
+
+.friend-list-entries.open-requests .request .name-left {
+    flex-grow: 1;
+    font-size: 12pt;
+    padding-left: 4px;
+    padding-top: 1px;
+}
+.friend-list-entries.open-requests .request .options-right {
+    flex-grow: 0;
+    width: 64px;
+    display: flex;
+    flex-direction: row-reverse;
+    padding-right: 4px;
+}
+
+.friend-list-entries.open-requests .request .options-right .icon {
+    width: 20px;
+    height: 20px;
+    margin-top: 4px;
+    margin-right: 2px;
+    background: rgba(0,0,0,0.2);
+    border-radius: 4px;
+    cursor: pointer;
+}
+.friend-list-entries.open-requests .request .options-right .icon svg {
+    width: 20px;
+    height: 20px;
+}
+.friend-list-entries.open-requests .request .options-right .icon:hover {
+    background: var(--success-color);
+}
+
+.friend-list-entries.open-requests .request .options-right .icon.x:hover {
+    background: var(--error-color);
+}
+
+.friend-list-options {
+    display: flex;
+    flex-direction: row-reverse;
+    height: 48px;
+    border-top: 1px solid var(--hr-color);
+    margin: 0px 8px -2px 8px;
+    padding-top: 8px;
+    flex-grow: 0;
+}
+.friend-list-options .add-friend-btn {
+    width: 32px;
+    height: 28px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-left: 1px solid var(--hr-color);
+    background: rgba(0,0,0,0.2);
+}
+.friend-list-options .add-friend-btn:hover {
+    cursor: pointer;
+    background: var(--primary-color);
+}
+.friend-list-options .add-friend-btn svg {
+    width: 22px;
+    height: 22px;
+    margin: 3px;
+}
+.friend-list-options .add-friend-input {
+    all: unset;
+    width: 100%;
+    height: 28px;
+    padding: 0 8px;
+    font-size: 10pt;
+    box-sizing: border-box;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    background: rgba(0,0,0,0.2);
+}
+
 
 .friend-entry {
     display: flex;
@@ -72,14 +184,17 @@
     width: 36px;
     height: 36px;
     margin: 3px;
+    border-radius: 6px;
+    text-align: center;
+    background: rgba(0,0,0,0.2);
+    flex-grow: 0;
 }
 
 .friend-entry .info-right {
     display: flex;
     flex-direction: column;
-    width: calc(100% - 16px);
-    margin-left: 8px;
     margin-right: 8px;
+    flex-grow: 1;
 }
 
 .friend-entry .info-right .info-top {
@@ -119,8 +234,8 @@
 }
 
 .chat-window-mount {
-    width: 120px;
-    height: 32px;
+    width: 160px;
+    height: 40px;
     border: 1px solid var(--hr-color);
     border-top: 0;
     border-right: 0;
@@ -128,7 +243,7 @@
     overflow: hidden;
 }
 .chat-window-mount.open {
-    width: 200px;
+    width: 240px;
     overflow: visible;
 }
 .chat-window-mount:first-child {
@@ -157,21 +272,22 @@
 
 .chat-window-chip .name {
     font-size: 12pt;
-    margin: 4px 8px;
+    margin: 8px 8px;
 }
 .chat-window-chip .info {
-    margin: 8px 12px;
+    margin: 12px 12px;
 }
 
 .chat-window-mount .chat-window-open {
     position: absolute;
-    bottom: 32px;
+    bottom: 40px;
     width: calc(100% + 2px);
-    height: 200px;
+    height: 240px;
     border: 1px solid var(--hr-color);
     border-bottom: 0;
     margin-bottom: -1px;
     margin-left: -1px;
+    padding-bottom: 4px;
     background: var(--background-color-element-darker-shade);
     display: flex;
     flex-direction: column;

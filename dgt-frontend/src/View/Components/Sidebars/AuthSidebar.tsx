@@ -47,8 +47,9 @@ class AuthSidebar extends React.Component<Props, InternalState> {
                 <div className={'sidebar'}>
                     <div className={'vertical-order'}>
                         <div className={'top'}>
-                            <h3>DartGameTracker</h3>
-                            <h5>Welcome, Greakz</h5>
+                            <div className={'header'}>
+                                DartGameTracker
+                            </div>
 
                             <SidebarLink linkTo={'/dashboard'} icon={<Dashboard/>} onClick={() => {
                             }}>Dashboard</SidebarLink>
@@ -85,7 +86,7 @@ class AuthSidebar extends React.Component<Props, InternalState> {
                         </div>
                     </div>
                 </div>
-                <div className={'sidebar-inset blend-in'}>
+                <div className={'sidebar-inset'}>
                     {this.props.children}
                 </div>
             </React.Fragment>

@@ -31,9 +31,12 @@ export default class DartBoardSvgClickable extends React.Component<ComponentProp
             <div
                 style={{
                     display: 'inline-block',
-                    width: '55vh',
-                    height: '55vh',
-                    borderRadius: '27.5vh',
+                    width: '400px',
+                    borderRadius: '55%',
+                    paddingTop: 3,
+                    paddingLeft: 2,
+                    paddingRight: 2,
+                    background: '#000',
                     boxShadow: '2px 1px 6px 2px rgba(0,0,0,0.4)',
                 }}
             >
@@ -55,7 +58,6 @@ export default class DartBoardSvgClickable extends React.Component<ComponentProp
                             onMouseLeave={() => {
                                 this.clearHover(0, 'LOWER_SINGLE');
                             }}
-
                     />
                     <path d="M1.471,-9.28 A 9.405 9.405 0 0 0 -1.47,-9.28 L -1.56,-9.87 A 10 10 0 0 1 1.564,-9.87 Z "
                           onMouseEnter={() => {

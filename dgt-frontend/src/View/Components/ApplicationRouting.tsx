@@ -7,8 +7,8 @@ import WelcomePage from "./PagesPublic/WelcomePage/WelcomePage";
 import DashboardPage from "./PagesAuth/DashboardPage/DashboardPage";
 import HistoryPage from "./PagesAuth/HistoryPage/HistoryPage";
 import SettingsPage from "./PagesAuth/SettingsPage/SettingsPage";
-import ClassicGamePage from "./AuthPages/GamePage/ClassicGame/ClassicGamePage";
 import GamePage from "./PagesAuth/GamePage/GamePage";
+import ClassicGamePage from "./PagesAuth/GamePage/ClassicGame/ClassicGamePage";
 
 function ApplicationRouting(props: { auth: boolean }) {
     return (

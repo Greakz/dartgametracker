@@ -41,7 +41,7 @@ class GamePage extends React.Component<Props, InternalState> {
 
         }
         return (
-            <div className={'p2'}>
+            <div className={'p2 blend-in'}>
 
                 <div className={'page-title'}>Play Game</div>
 
@@ -71,7 +71,6 @@ class GamePage extends React.Component<Props, InternalState> {
                 </div>
 
             </div>
-
         );
     }
 }

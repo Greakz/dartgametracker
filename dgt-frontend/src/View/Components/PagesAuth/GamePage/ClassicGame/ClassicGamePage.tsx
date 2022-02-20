@@ -37,7 +37,7 @@ class ClassicGamePage extends React.Component<Props, InternalState> {
 
     render() {
         return (
-            <div className={'game-view-horizontal-master-frame'}>
+            <div className={'game-view-horizontal-master-frame blend-in'}>
                 <div className={'game-view-vertical-master-frame'}>
                     <div className={'game-view-header'}>
                         <div className={'game-view-title'}>
@@ -184,8 +184,10 @@ class ClassicGamePage extends React.Component<Props, InternalState> {
                     />
                 </div>
                 <div className={'below-board'}>
-                    <input type={'text'} value={'t-t-t'}/>
-                    <button>Enter</button>
+                    <div className={'container'}>
+                        <input type={'text'} value={'t-t-t'}/>
+                        <button>Enter</button>
+                    </div>
                 </div>
             </div>
         );

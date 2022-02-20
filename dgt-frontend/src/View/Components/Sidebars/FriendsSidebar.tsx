@@ -4,6 +4,7 @@ import {RootState} from "../../../Redux/RootState";
 import {RootAction} from "../../../Redux/RootAction";
 import './FriendsSidebar.css';
 import ChatWindow from "./ChatWindow";
+import {Close, Done, PersonAdd} from "@mui/icons-material";
 
 interface ComponentProps {
     children: React.ReactNode;
@@ -44,9 +45,27 @@ class FriendsSidebar extends React.Component<Props, InternalState> {
                 <div className={'sidebar-r'}>
                     <div className={'vertical-order'}>
                         <div className={'friend-list-header'}>
-                            <h3>Friends</h3>
+                            Friendlist
+                        </div>
+                        <div className={'friend-list-entries open-requests'}>
+                            <div className={'header primary'}>Received Friend Requests</div>
+
+                            <div className={'request'}>
+                                <div className={'avatar-left'}>av</div>
+                                <div className={'name-left'}>Adrianovic</div>
+                                <div className={'options-right'}>
+                                    <div className={'icon'}>
+                                        <Done/>
+                                    </div>
+                                    <div className={'icon x'}>
+                                        <Close/>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                         <div className={'friend-list-entries v-scroll'}>
+                            <div className={'header'}>Friends</div>
 
                             {this.friendListEntry()}
                             {this.friendListEntry()}
@@ -60,25 +79,31 @@ class FriendsSidebar extends React.Component<Props, InternalState> {
                             {this.friendListEntry()}
                             {this.friendListEntry()}
 
+                        </div>
+                        <div className={'friend-list-options'}>
+                            <div className={'add-friend-btn'}>
+                                <PersonAdd/>
+                            </div>
+                            <input className={'add-friend-input'} placeholder={'add Friend'} />
                         </div>
 
                     </div>
                 </div>
-                <div className={'sidebar-inset-r blend-in'}>
+                <div className={'sidebar-inset-r'}>
                     {this.props.children}
                 </div>
                 <div className={'bottom-line'}>
-                    <ChatWindow />
-                    <ChatWindow />
-                    <ChatWindow />
-                    <ChatWindow />
+                    <ChatWindow/>
+                    <ChatWindow/>
+                    <ChatWindow/>
+                    <ChatWindow/>
                 </div>
             </React.Fragment>
         );
     }
 
     private friendListEntry() {
-        return(
+        return (
             <div className={'friend-entry'}>
                 <div className={'avatar-left'}>
                     Av
@@ -98,7 +123,7 @@ class FriendsSidebar extends React.Component<Props, InternalState> {
                 </div>
 
             </div>
-        )
+        );
     }
 }
 

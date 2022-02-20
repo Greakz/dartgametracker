@@ -120,3 +120,15 @@ a, a:visited, a:hover, a:active {
 .v-scroll::-webkit-scrollbar-thumb:hover {
     background: var(--primary-color);
 }
+
+.blend-in {
+    animation: blend-in 200ms forwards;
+}
+@keyframes blend-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

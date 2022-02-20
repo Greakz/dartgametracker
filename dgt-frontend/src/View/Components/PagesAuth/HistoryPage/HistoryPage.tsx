@@ -35,7 +35,7 @@ class HistoryPage extends React.Component<Props, InternalState> {
 
     render() {
         return (
-            <div className={'p2'}>
+            <div className={'p2 blend-in'}>
 
                 <div className={'page-title'}>History</div>
 

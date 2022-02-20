@@ -5,7 +5,6 @@ import {RootState} from "../../../../../../Redux/RootState";
 import {DartBoardHit} from "../../DartBoardClickable/DartBoardSvgClickable";
 import {DartGame} from "../../../../../../Entity/DartGame";
 import {RootAction} from "../../../../../../Redux/RootAction";
-import AuthSidebar from "../../../../Sidebars/AuthSidebar";
 import GamePlayerScores from "./GamePlayerScores";
 
 interface StateProps {
@@ -61,33 +60,25 @@ class ClassicGame extends React.Component<Props, InternalState> {
 
     render() {
         return (
-            <AuthSidebar>
-                <div className={'input-sidebar-inset'}>
-                <div className={'classic-game'}>
-                    <div className={'classic-game-header'}>
-                        <div className={'title glass'}>Classic 501</div>
-                        <div className={'turn glass'}>
-                            Turn: <span className={"value"}>4</span><br />
-                            Darts: <span className={"value"}>10,11,12</span><br />
-                            Player: <span className={"value"}>Luke</span>
-                        </div>
-                        <div className={'statistics glass'}>
-                            TurnAvg: <span className={"value"}>40.25</span><br />
-                            Tripple 20's: <span className={"value"}>3</span><br />
-                            0er Darts: <span className={"value"}>2</span>
-                        </div>
+            <div className={'classic-game'}>
+                <div className={'classic-game-header'}>
+                    <div className={'title glass'}>Classic 501</div>
+                    <div className={'turn glass'}>
+                        Turn: <span className={"value"}>4</span><br/>
+                        Darts: <span className={"value"}>10,11,12</span><br/>
+                        Player: <span className={"value"}>Luke</span>
                     </div>
-                    <div className={'classic-game-hr glass'} />
-                    <div className={'classic-game-player-scores'}>
-                        <GamePlayerScores />
+                    <div className={'statistics glass'}>
+                        TurnAvg: <span className={"value"}>40.25</span><br/>
+                        Tripple 20's: <span className={"value"}>3</span><br/>
+                        0er Darts: <span className={"value"}>2</span>
                     </div>
                 </div>
+                <div className={'classic-game-hr glass'}/>
+                <div className={'classic-game-player-scores'}>
+                    <GamePlayerScores/>
                 </div>
-                <div className={'input-sidebar'}>
-                    sidebar
-                </div>
-            </AuthSidebar>
-
+            </div>
         );
     }
 }

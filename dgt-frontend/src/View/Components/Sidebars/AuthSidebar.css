@@ -2,9 +2,9 @@
     background: var(--background-color-sidebar);
     -webkit-box-shadow: 2px 1px 5px 0px rgba(0,0,0,0.15);
     box-shadow: 2px 1px 5px 0px rgba(0,0,0,0.15);
-    width: 200px;
+    width: 240px;
     height: 100vh;
-    padding: 2em;
+    padding: 24px;
     position: fixed;
     left: 0;
     z-index: 2;
@@ -14,22 +14,10 @@
 .sidebar-inset {
     position: fixed;
     z-index: 1;
-    padding-left: 200px;
+    padding-left: 240px;
     inset: 0;
     overflow-x: hidden;
     overflow-y: auto;
-}
-
-.sidebar-inset.blend-in {
-    animation: blend-in 200ms forwards;
-}
-@keyframes blend-in {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
 }
 
 .sidebar .vertical-order {
@@ -41,6 +29,15 @@
 .sidebar .vertical-order .top {
 
 }
+.sidebar .vertical-order .top .header {
+    font-size: 14pt;
+    padding: 2px 16px 8px 16px;
+    border-bottom: 1px solid var(--hr-color);
+    flex-grow: 0;
+    margin-left: -16px;
+    margin-right: -16px;
+    margin-bottom: 16px;
+}
 .sidebar .vertical-order .bottom {
 
 }
@@ -49,9 +46,9 @@
     display: flex;
     justify-content: flex-start;
     flex-direction: row;
-    margin-left: -2em;
-    margin-right: -2em;
-    padding: 0.6em 2em 0.4em 2em;
+    margin-left: -24px;
+    margin-right: -24px;
+    padding: 8px 24px 6px 24px;
     cursor: pointer;
 }
 
