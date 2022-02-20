@@ -48,8 +48,9 @@
     flex-direction: row;
     margin-left: -24px;
     margin-right: -24px;
-    padding: 8px 24px 6px 24px;
+    padding: 12px 24px 10px 24px;
     cursor: pointer;
+    font-size: 12pt;
 }
 
 .logout-button {
@@ -66,15 +67,15 @@
 }
 
 .sidebar-link:active {
-    padding-left: calc(2em + 1px)
+    padding-left: 25px
 }
 
 .sidebar-link .icon {
 }
 
 .sidebar-link .text {
-    padding: 0.25em;
-    padding-left: 1em;
+    margin-left: 16px;
+    margin-top: 1px;
 }
 
 

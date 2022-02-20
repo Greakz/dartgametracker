@@ -95,7 +95,7 @@
     flex-grow: 1;
     font-size: 12pt;
     padding-left: 4px;
-    padding-top: 1px;
+    padding-top: 3px;
 }
 .friend-list-entries.open-requests .request .options-right {
     flex-grow: 0;
@@ -173,6 +173,9 @@
     margin-top: 8px;
     background: var(--background-color-sidebar);
     border-radius: 8px;
+    flex-shrink: 0;
+    flex-grow: 0;
+    width: 100%;
 }
 
 .friend-entry:hover {
@@ -188,31 +191,48 @@
     text-align: center;
     background: rgba(0,0,0,0.2);
     flex-grow: 0;
+    flex-shrink: 0;
+}
+.friend-entry .name-left {
+    height: 36px;
+    flex-grow: 1;
+    padding: 8px;
+    padding-left: 6px;
+    font-size: 13pt;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 125px;
+    max-width: 125px;
 }
 
 .friend-entry .info-right {
-    display: flex;
-    flex-direction: column;
-    margin-right: 8px;
-    flex-grow: 1;
+    flex-grow: 0;
+    flex-shrink: 0;
 }
 
-.friend-entry .info-right .info-top {
+.friend-entry .info-right .options {
     width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    border-bottom: 1px solid var(--hr-color);
+    flex-direction: row-reverse;
+    display: none;
 }
 
-.friend-entry .info-right .info-top .name {
-    font-size: 12pt;
-    padding-left: 2px;
+.friend-entry:hover > .name-left {
+    max-width: 100px;
 }
-.friend-entry .info-right .info-top .status {
-    font-size: 9pt;
-    padding-top: 4px;
-    padding-right: 2px;
+.friend-entry:hover > .info-right .options {
+    display: flex;
+}
+
+.friend-entry .info-right .status {
+    width: 52px;
+    text-align: right;
+    padding-top: 12px;
+    padding-right: 8px;
+    height: 100%;
+}
+
+.friend-entry:hover > .info-right .status {
+    display: none;
 }
 .friend-entry .info-right .status.online {
     color: var(--success-color);
@@ -229,9 +249,23 @@
     color: var(--disabled-color);
 }
 
-.friend-entry .info-right .info-bottom {
-    padding: 0 2px;
+.friend-entry .info-right .options .icon-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    background: rgba(0,0,0,0.2);
+    margin: 5px;
+    margin-left: 0;
 }
+.friend-entry .info-right .options .icon-btn:hover {
+    background: var(--primary-color);
+}
+.friend-entry .info-right .options .icon-btn svg {
+    width: 26px;
+    height: 26px;
+    margin: 3px;
+}
+
 
 .chat-window-mount {
     width: 160px;
