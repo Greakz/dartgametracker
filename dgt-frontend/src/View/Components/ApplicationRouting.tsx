@@ -9,6 +9,7 @@ import HistoryPage from "./PagesAuth/HistoryPage/HistoryPage";
 import SettingsPage from "./PagesAuth/SettingsPage/SettingsPage";
 import GamePage from "./PagesAuth/GamePage/GamePage";
 import ClassicGamePage from "./PagesAuth/GamePage/ClassicGame/ClassicGamePage";
+import RegisterPage from "./PagesPublic/RegisterPage/RegisterPage";
 
 function ApplicationRouting(props: { auth: boolean }) {
     return (
@@ -31,6 +32,7 @@ function ApplicationRouting(props: { auth: boolean }) {
                     !props.auth &&
                     <React.Fragment>
                         <Route path="login" element={<WelcomePage/>}/>
+                        <Route path="register" element={<RegisterPage/>}/>
                         <Route path="/" element={<Navigate replace to="/login"/>}/>
                     </React.Fragment>
                 }

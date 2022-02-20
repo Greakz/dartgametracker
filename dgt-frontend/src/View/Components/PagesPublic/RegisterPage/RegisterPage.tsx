@@ -2,7 +2,7 @@ import React, {Dispatch} from "react";
 import {connect} from "react-redux";
 import {RootState} from "../../../../Redux/RootState";
 import {RootAction} from "../../../../Redux/RootAction";
-import './WelcomePage.css';
+import './RegisterPage.css';
 import {Link} from "react-router-dom";
 
 interface StateProps {
@@ -19,7 +19,7 @@ interface InternalState {
 
 type Props = StateProps & DispatchProps;
 
-class WelcomePage extends React.Component<Props, InternalState> {
+class RegisterPage extends React.Component<Props, InternalState> {
 
     static mapStateProps(state: RootState): StateProps {
         return {};
@@ -40,12 +40,17 @@ class WelcomePage extends React.Component<Props, InternalState> {
 
                 <div className={'welcome-container-vert-flex'}>
 
-                    <div className={'header-logo'}>DartGameTracker</div>
+                    <div className={'header-logo'}>DartGameTracker Registration</div>
 
                     <div className={'login-form'}>
 
                         <div className={'input-container p025'}>
-                            <label htmlFor={'name'}>Name / Email</label>
+                            <label htmlFor={'name'}>Name</label>
+                            <input type={'text'}/>
+                        </div>
+
+                        <div className={'input-container p025'}>
+                            <label htmlFor={'name'}>Email</label>
                             <input type={'text'}/>
                         </div>
 
@@ -57,14 +62,11 @@ class WelcomePage extends React.Component<Props, InternalState> {
                         <div className={'button-container'}>
                             <Link to={'/dashboard'}>
                                 <button>
-                                    Login
+                                    Register
                                 </button>
                             </Link>
                         </div>
 
-                        <Link to={'/register'}>
-                            Register
-                        </Link>
                     </div>
 
 
@@ -74,4 +76,4 @@ class WelcomePage extends React.Component<Props, InternalState> {
     }
 }
 
-export default connect(WelcomePage.mapStateProps, WelcomePage.mapDispatchProps)(WelcomePage);
+export default connect(RegisterPage.mapStateProps, RegisterPage.mapDispatchProps)(RegisterPage);
