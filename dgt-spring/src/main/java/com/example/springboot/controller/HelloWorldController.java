@@ -22,6 +22,7 @@ public class HelloWorldController {
 	public String firstPage() {
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		String currentPrincipalName = authentication.getName();
+
 		return "Hello " + currentPrincipalName;
 	}
 
