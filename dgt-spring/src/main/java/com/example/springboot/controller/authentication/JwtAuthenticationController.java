@@ -3,17 +3,11 @@ package com.example.springboot.controller.authentication;
 import com.example.springboot.config.JwtTokenUtil;
 import com.example.springboot.controller.Response;
 import com.example.springboot.entity.database.UserAccount;
-import com.example.springboot.exception.CustomException;
 import com.example.springboot.service.JwtUserDetailsService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.BadCredentialsException;
-import org.springframework.security.authentication.DisabledException;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
@@ -34,14 +28,16 @@ public class JwtAuthenticationController {
     private PasswordEncoder bcryptEncoder;
 
     @RequestMapping(value = "/authenticate", method = RequestMethod.POST, produces = "application/json; charset=utf-8")
-    public ResponseEntity<JwtAuthenticationResponse> createAuthenticationToken(@RequestBody JwtAuthenticatonRequest authenticationRequest) throws Exception {
-        userDetailsService.authenticate(authenticationRequest.getUsername(), authenticationRequest.getPassword());
+    public ResponseEntity<Response<JwtAuthenticationResponse>> createAuthenticationToken(@RequestBody JwtAuthenticatonRequest authenticationRequest) throws Exception {
+        userDetailsService.authenticate(authenticationRequest);
         final UserDetails userDetails = userDetailsService
                 .loadUserByUsername(authenticationRequest.getUsername());
 
         final String token = jwtTokenUtil.generateToken(userDetails);
+        JwtAuthenticationResponse result = new JwtAuthenticationResponse(token);
+        Response<JwtAuthenticationResponse> response = new Response<>("User authenticated", 200, result);
 
-        return ResponseEntity.ok(new JwtAuthenticationResponse(token));
+        return ResponseEntity.ok(response);
     }
 
     @RequestMapping(value = "/register", method = RequestMethod.POST, produces = "application/json; charset=utf-8")
@@ -52,7 +48,7 @@ public class JwtAuthenticationController {
                 registeredAccount.getUsername(),
                 registeredAccount.getPassword()
         );
-        Response<JwtRegistrationResponse> response = new Response<>("USER_REGISTERED", 200, result);
+        Response<JwtRegistrationResponse> response = new Response<>("User registered", 200, result);
         return ResponseEntity.ok(response);
     }
 }
