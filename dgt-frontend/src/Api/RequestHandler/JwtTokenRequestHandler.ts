@@ -1,18 +1,19 @@
 import {POSTRequestHandler} from "../RequestHandler";
 import {POSTHttpApi} from "../HttpApi";
 import {PostRequest} from "../Request";
+import {BaseResponse, ResponseWrapper} from "../BaseResponse";
 
 export interface JwtTokenRequest {
     username: string
     password: string
 }
 
-export interface JwtTokenResponse {
+export interface JwtTokenResponse extends BaseResponse  {
     jwttoken: string;
 }
 
-export abstract class JwtTokenRequestHandler extends POSTRequestHandler<JwtTokenRequest, JwtTokenResponse> {
-    static async fetch(body: JwtTokenRequest): Promise<JwtTokenResponse> {
+export abstract class JwtTokenRequestHandler extends POSTRequestHandler<JwtTokenRequest, ResponseWrapper<JwtTokenResponse>> {
+    static async fetch(body: JwtTokenRequest): Promise<ResponseWrapper<JwtTokenResponse>> {
         const request: PostRequest = {
             url: 'authenticate',
             body: JSON.stringify(body)

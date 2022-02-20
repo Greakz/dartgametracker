@@ -23,7 +23,7 @@ class Layout extends React.Component<Props, {}> {
 
     static mapStateProps(state: RootState) {
         return {
-            auth: true //state.httpState.auth.type === 'authenticated'
+            auth: state.httpState.auth.type === 'authenticated'
         };
     }
 

@@ -25,7 +25,7 @@ function ApplicationRouting(props: { auth: boolean }) {
                         <Route path="history" element={<HistoryPage/>}/>
                         <Route path="settings" element={<SettingsPage/>}/>
 
-                        <Route path="/" element={<Navigate replace to="/dashboard"/>}/>
+                        <Route element={<Navigate replace to="/dashboard"/>} path={'*'}/>
                     </React.Fragment>
                 }
                 {   /* Public routes */
@@ -33,7 +33,7 @@ function ApplicationRouting(props: { auth: boolean }) {
                     <React.Fragment>
                         <Route path="login" element={<WelcomePage/>}/>
                         <Route path="register" element={<RegisterPage/>}/>
-                        <Route path="/" element={<Navigate replace to="/login"/>}/>
+                        <Route element={<Navigate replace to="/login"/>} path={'*'}/>
                     </React.Fragment>
                 }
             </Route>

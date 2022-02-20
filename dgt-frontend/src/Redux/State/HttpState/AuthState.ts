@@ -1,3 +1,6 @@
+import {HttpState} from "../HttpState";
+import {StateRequestEntry} from "./StateRequestEntry";
+
 export type AuthState = AuthenticatedState | UnauthenticatedState
 
 export interface AuthenticatedState {

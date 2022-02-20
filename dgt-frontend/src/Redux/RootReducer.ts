@@ -1,7 +1,11 @@
 import {initialRootState, RootState} from "./RootState";
 import {RootAction} from "./RootAction";
-import {SET_REQUEST_IS_PENDING} from "./Reducer/SetRequestIsPending.Action";
-import {setRequestIsPendingReducer} from "./Reducer/SetLoadingState.Reducer";
+import {ADD_FETCH_REQUEST} from "./Reducer/AddFetchRequest.Action";
+import {SET_FETCH_REQUEST_RESULT} from "./Reducer/SetFetchRequestResult.Action";
+import {setFetchRequestResultReducer} from "./Reducer/SetFetchRequestResult.Reducer";
+import {addFetchRequestReducer} from "./Reducer/AddFetchRequest.Reducer";
+import {SET_JWT_TOKEN} from "./Reducer/SetJwtToken.Action";
+import {setJwtTokenActionReducer} from "./Reducer/SetJwtToken.Reducer";
 
 export function rootReducer(rootState: RootState | undefined, action: RootAction) {
     if (rootState === undefined) {
@@ -13,8 +17,14 @@ export function rootReducer(rootState: RootState | undefined, action: RootAction
          * Action/Reducer Call Register
          */
 
-        case SET_REQUEST_IS_PENDING:
-            return setRequestIsPendingReducer(rootState, action);
+        case ADD_FETCH_REQUEST:
+            return addFetchRequestReducer(rootState, action);
+
+        case SET_FETCH_REQUEST_RESULT:
+            return setFetchRequestResultReducer(rootState, action);
+
+        case SET_JWT_TOKEN:
+            return setJwtTokenActionReducer(rootState, action);
 
 
         /**

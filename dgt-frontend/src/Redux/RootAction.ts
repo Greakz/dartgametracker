@@ -1,6 +1,11 @@
-import {SetRequestIsPendingAction} from "./Reducer/SetRequestIsPending.Action";
+import {AddFetchRequestAction} from "./Reducer/AddFetchRequest.Action";
 import {SagaActions} from "./RootSaga";
+import {SetFetchRequestResultAction} from "./Reducer/SetFetchRequestResult.Action";
+import {SetJwtTokenAction} from "./Reducer/SetJwtToken.Action";
 
 export type RootAction =
     | SagaActions
-    | SetRequestIsPendingAction
+    // Auth Actions
+    | SetJwtTokenAction
+    | AddFetchRequestAction
+    | SetFetchRequestResultAction

@@ -3,7 +3,7 @@ import {GETHttpApi} from "../HttpApi";
 import {GetRequest} from "../Request";
 
 /*
-export interface UserListResponse {
+export interface UserListResponse extends BaseResponse  {
     usernames: string[];
 }
  */
