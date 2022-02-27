@@ -2,6 +2,7 @@ import {RootState} from "../RootState";
 import {SetJwtTokenAction} from "./SetJwtToken.Action";
 
 export function setJwtTokenActionReducer(state: RootState, action: SetJwtTokenAction): RootState {
+    localStorage.setItem('auth', action.token);
     return {
         ...state,
         httpState: {

@@ -20,8 +20,8 @@ export function* RetrieveTokenSaga(action: RetrieveTokenSagaAction) {
     const answer: JwtTokenResponse = yield call(JwtTokenRequestHandler.fetch, retrieveTokenRequest);
     yield put(buildSetFetchRequestResultAction('retrieve-token', answer));
 
-    if (answer.jwttoken) {
-        yield put(buildSetJwtTokenAction(answer.jwttoken));
+    if (answer.token) {
+        yield put(buildSetJwtTokenAction(answer.token));
     }
 
 }

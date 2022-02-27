@@ -8,6 +8,8 @@ import createSagaMiddleware from "redux-saga";
 import {initialRootState, RootState} from "./Redux/RootState";
 import {RootAction} from "./Redux/RootAction";
 import Layout from "./View/Layout";
+import {composeWithDevTools} from 'redux-devtools-extension';
+
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -15,7 +17,7 @@ const sagaMiddleware = createSagaMiddleware();
 export const store: Store<RootState, RootAction> = createStore(
     rootReducer,
     initialRootState(),
-    applyMiddleware(sagaMiddleware)
+    composeWithDevTools(applyMiddleware(sagaMiddleware))
 );
 
 // build react context

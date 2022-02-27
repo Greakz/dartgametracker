@@ -39,7 +39,7 @@ export abstract class POSTHttpApi extends Api {
             Api.baseUrl + postRequest.url,
             {
                 method: 'POST',
-                // mode: 'cors',
+                mode: 'cors',
                 cache: 'no-cache',
                 headers: {
                     'Content-Type': 'application/json',

@@ -1,0 +1,2 @@
+INSERT INTO public.user_account (id, email, password, username) VALUES (1, null, '$2a$10$956dpYfUNJzHj5HcYZfBye6PvDshmLeF/3TLVUKMGFpnt/UlWzTRS', 'Test');
+INSERT INTO public.user_account (id, email, password, username) VALUES (2, null, '$2a$10$5n.F4dt3CEDUTgP8ncEoCu4asfBTHvmv6uh/DlDaJHyCjj550eGWq', 'Test2');

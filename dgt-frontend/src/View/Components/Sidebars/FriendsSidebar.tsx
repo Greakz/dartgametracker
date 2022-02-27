@@ -1,10 +1,12 @@
-import React, {Dispatch} from "react";
+import React, {ChangeEvent, Dispatch} from "react";
 import {connect} from "react-redux";
 import {RootState} from "../../../Redux/RootState";
 import {RootAction} from "../../../Redux/RootAction";
 import './FriendsSidebar.css';
 import ChatWindow from "./ChatWindow";
 import {AccountBox, Close, Done, Gamepad, PersonAdd} from "@mui/icons-material";
+import {SendFriendRequestHandler} from "../../../Api/RequestHandler/SendFriendRequestHandler";
+import LoadingSpinner from "../_other/Elements/LoadingSpinner";
 
 interface ComponentProps {
     children: React.ReactNode;
@@ -19,7 +21,8 @@ interface DispatchProps {
 }
 
 interface InternalState {
-
+    isSending: boolean
+    friendRequestInput: string
 }
 
 type Props = ComponentProps & StateProps & DispatchProps;
@@ -36,7 +39,10 @@ class FriendsSidebar extends React.Component<Props, InternalState> {
 
     constructor(props: Props) {
         super(props);
-        this.state = {};
+        this.state = {
+            isSending: false,
+            friendRequestInput: ''
+        };
     }
 
     render() {
@@ -84,10 +90,22 @@ class FriendsSidebar extends React.Component<Props, InternalState> {
                         </div>
 
                         <div className={'friend-list-options'}>
-                            <div className={'add-friend-btn'}>
-                                <PersonAdd/>
+                            <div className={'add-friend-btn'} onClick={() => this.sendFriendRequest()}>
+                                {this.state.isSending && <LoadingSpinner />}
+                                {!this.state.isSending && <PersonAdd />}
                             </div>
-                            <input className={'add-friend-input'} placeholder={'add Friend'} />
+                            <input
+                                className={'add-friend-input'}
+                                placeholder={'add Friend'}
+                                value={this.state.friendRequestInput}
+                                onChange={(e:ChangeEvent<HTMLInputElement>) => {
+                                    this.setState({
+                                        ...this.state,
+                                        friendRequestInput: e.target.value
+                                    })
+                                }}
+                                disabled={this.state.isSending}
+                            />
                         </div>
 
                     </div>
@@ -131,6 +149,24 @@ class FriendsSidebar extends React.Component<Props, InternalState> {
 
             </div>
         );
+    }
+
+    private sendFriendRequest() {
+        this.setState({
+            ...this.state,
+            isSending: true
+        })
+        SendFriendRequestHandler
+            .fetch({
+                friendUsername: this.state.friendRequestInput
+            })
+            .then(() => {
+                this.setState({
+                    ...this.state,
+                    isSending: false,
+                    friendRequestInput: ''
+                })
+        })
     }
 }
 

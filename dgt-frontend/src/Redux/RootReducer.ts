@@ -6,8 +6,10 @@ import {setFetchRequestResultReducer} from "./Reducer/SetFetchRequestResult.Redu
 import {addFetchRequestReducer} from "./Reducer/AddFetchRequest.Reducer";
 import {SET_JWT_TOKEN} from "./Reducer/SetJwtToken.Action";
 import {setJwtTokenActionReducer} from "./Reducer/SetJwtToken.Reducer";
+import {CLEAR_JWT_TOKEN} from "./Reducer/ClearJwtToken.Action";
+import {clearJwtTokenActionReducer} from "./Reducer/ClearJwtToken.Reducer";
 
-export function rootReducer(rootState: RootState | undefined, action: RootAction) {
+export function rootReducer(rootState: RootState | undefined, action: RootAction): RootState {
     if (rootState === undefined) {
         console.error("no state available -> Store creation has failed");
         return initialRootState();
@@ -25,6 +27,9 @@ export function rootReducer(rootState: RootState | undefined, action: RootAction
 
         case SET_JWT_TOKEN:
             return setJwtTokenActionReducer(rootState, action);
+
+        case CLEAR_JWT_TOKEN:
+            return clearJwtTokenActionReducer(rootState, action);
 
 
         /**

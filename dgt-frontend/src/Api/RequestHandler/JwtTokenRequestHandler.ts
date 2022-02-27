@@ -9,7 +9,7 @@ export interface JwtTokenRequest {
 }
 
 export interface JwtTokenResponse extends BaseResponse  {
-    jwttoken: string;
+    token: string;
 }
 
 export abstract class JwtTokenRequestHandler extends POSTRequestHandler<JwtTokenRequest, ResponseWrapper<JwtTokenResponse>> {

@@ -1,11 +1,13 @@
 import * as React from "react";
 import {RootState} from "../Redux/RootState";
 import {RootAction} from "../Redux/RootAction";
-import {connect, DispatchProp} from "react-redux";
+import {connect} from "react-redux";
 import AuthSidebar from "./Components/Sidebars/AuthSidebar";
 import FriendsSidebar from "./Components/Sidebars/FriendsSidebar";
 import ApplicationRouting from "./Components/ApplicationRouting";
 import {BrowserRouter} from "react-router-dom";
+import {buildSetJwtTokenAction} from "../Redux/Reducer/SetJwtToken.Action";
+import {Dispatch} from "react";
 
 
 interface StateProps {
@@ -13,7 +15,7 @@ interface StateProps {
 }
 
 interface DispatchProps {
-
+    setJwtToken: (token: string) => void
 }
 
 type Props = StateProps & DispatchProps;
@@ -27,9 +29,22 @@ class Layout extends React.Component<Props, {}> {
         };
     }
 
-    static mapDispatchProps(dispatch: DispatchProp<RootAction>) {
-        return {};
+    static mapDispatchProps(dispatch: Dispatch<RootAction>) {
+        return {
+            setJwtToken: (token: string) => {
+                dispatch(buildSetJwtTokenAction(token))
+            }
+        };
     }
+
+    constructor(props: Props) {
+        super(props);
+        const token = localStorage.getItem('auth');
+        if(token !== null) {
+            props.setJwtToken(token)
+        }
+    }
+
 
     render() {
         if (this.props.auth) {

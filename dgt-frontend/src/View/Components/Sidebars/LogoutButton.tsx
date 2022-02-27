@@ -19,7 +19,7 @@ export default class LogoutButton extends React.Component<ComponentProps, Intern
 
     render() {
         return (
-            <div className={'sidebar-link'}>
+            <div className={'sidebar-link'} onClick={() => this.props.onClick()}>
                 <div className={'icon'}>
                     <Logout/>
                 </div>

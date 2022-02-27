@@ -15,6 +15,7 @@ import {buildSetJwtTokenAction} from "../../../../Redux/Reducer/SetJwtToken.Acti
 import {ResponseWrapper} from "../../../../Api/BaseResponse";
 
 interface StateProps {
+    loginRequest: StateRequestEntry | undefined
 }
 
 interface DispatchProps {
@@ -135,7 +136,8 @@ class WelcomePage extends React.Component<Props, InternalState> {
             });
             JwtTokenRequestHandler.fetch(retrieveTokenRequest).then((r: ResponseWrapper<JwtTokenResponse>) => {
                 if(r.status === 200) {
-                    this.props.setToken(r.data.jwttoken)
+                    console.log(r.data.token)
+                    this.props.setToken(r.data.token)
                 } else {
                     this.setState({
                         ...this.state,
@@ -146,7 +148,6 @@ class WelcomePage extends React.Component<Props, InternalState> {
                         error: r.message
                     })
                 }
-
             });
         }
     }

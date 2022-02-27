@@ -7,6 +7,7 @@ import {Dashboard, ManageSearch, Settings, SettingsInputComposite} from "@mui/ic
 import SidebarLink from "./SidebarLink";
 import LogoutButton from "./LogoutButton";
 import {Link} from "react-router-dom";
+import {buildClearJwtTokenAction} from "../../../Redux/Reducer/ClearJwtToken.Action";
 
 interface ComponentProps {
     children: React.ReactNode;
@@ -17,7 +18,7 @@ interface StateProps {
 }
 
 interface DispatchProps {
-
+    clearJwtToken: () => void;
 }
 
 interface InternalState {
@@ -33,7 +34,11 @@ class AuthSidebar extends React.Component<Props, InternalState> {
     }
 
     static mapDispatchProps(dispatch: Dispatch<RootAction>): DispatchProps {
-        return {};
+        return {
+            clearJwtToken: () => {
+                dispatch(buildClearJwtTokenAction());
+            }
+        };
     }
 
     constructor(props: Props) {
@@ -61,10 +66,11 @@ class AuthSidebar extends React.Component<Props, InternalState> {
                             }}>Settings</SidebarLink>
                         </div>
                         <div className={'bottom'}>
-                            <Link to={'/'}>
-                                <LogoutButton onClick={() => {
-                                }}/>
-                            </Link>
+                            <LogoutButton
+                                onClick={() => {
+                                    this.props.clearJwtToken();
+                                }}
+                            />
                             <Link to={'#'}>
                                 <div className={'imprint'}>
                                     Imprint

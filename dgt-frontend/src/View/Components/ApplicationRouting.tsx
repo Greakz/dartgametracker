@@ -22,8 +22,8 @@ function ApplicationRouting(props: { auth: boolean }) {
                         <Route path="/game" element={<GamePage/>}/>
                         <Route path="/game/classic" element={<ClassicGamePage/>}/>
 
-                        <Route path="history" element={<HistoryPage/>}/>
-                        <Route path="settings" element={<SettingsPage/>}/>
+                        <Route path="/history" element={<HistoryPage/>}/>
+                        <Route path="/settings" element={<SettingsPage/>}/>
 
                         <Route element={<Navigate replace to="/dashboard"/>} path={'*'}/>
                     </React.Fragment>
@@ -31,8 +31,11 @@ function ApplicationRouting(props: { auth: boolean }) {
                 {   /* Public routes */
                     !props.auth &&
                     <React.Fragment>
-                        <Route path="login" element={<WelcomePage/>}/>
-                        <Route path="register" element={<RegisterPage/>}/>
+                        <Route path="/login" element={<WelcomePage/>}/>
+                        <Route path="/register" element={<RegisterPage/>}/>
+
+                        <Route path="/" element={<Navigate replace to="/login"/>}/>
+
                         <Route element={<Navigate replace to="/login"/>} path={'*'}/>
                     </React.Fragment>
                 }
