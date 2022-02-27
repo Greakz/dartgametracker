@@ -8,7 +8,7 @@ export interface SendFriendRequestRequest {
 }
 
 export interface SendFriendRequestResponse extends BaseResponse {
-    friendUsername: boolean;
+    friendUsername: string;
 }
 
 export abstract class SendFriendRequestHandler extends POSTRequestHandler<SendFriendRequestRequest, ResponseWrapper<SendFriendRequestResponse>> {

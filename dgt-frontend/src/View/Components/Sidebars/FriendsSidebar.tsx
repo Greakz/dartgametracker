@@ -160,7 +160,8 @@ class FriendsSidebar extends React.Component<Props, InternalState> {
             .fetch({
                 friendUsername: this.state.friendRequestInput
             })
-            .then(() => {
+            .then((d: any) => {
+                console.log(d);
                 this.setState({
                     ...this.state,
                     isSending: false,

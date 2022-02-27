@@ -127,7 +127,7 @@ public class JwtUserDetailsService implements UserDetailsService {
     private void pushProgress(SseEmitter sseEmitter, SseConnectionSuccessfulMessage progress) {
         try {
             logger.info("Pushing progress: {}", progress.toString());
-            sseEmitter.send(SseEmitter.event().name("friend-service").data(progress, MediaType.APPLICATION_JSON));
+            sseEmitter.send(SseEmitter.event().name("user-service").data(progress, MediaType.APPLICATION_JSON));
         } catch (IOException e) {
             logger.error("An error occurred while emitting progress.", e);
         }

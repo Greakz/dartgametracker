@@ -43,7 +43,7 @@ export abstract class POSTHttpApi extends Api {
                 cache: 'no-cache',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authentication': jwtToken
+                    'Authorization': jwtToken
                 },
                 body: postRequest.body,
             }
@@ -75,7 +75,7 @@ export abstract class GETHttpApi extends Api {
                 cache: 'no-cache',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authentication': jwtToken
+                    'Authorization': jwtToken
                 },
             }
         );
